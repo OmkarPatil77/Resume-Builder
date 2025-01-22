@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder with ATS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="main">
+        <div class="left-panel">
+            <h2>Enter Your Details</h2>
+            <form>
+                <h3>Job Role</h3>
+                <label for="job-role">Select a Job Role:</label>
+                <select id="job-role">
+                    <option value="data-analyst">Data Analyst</option>
+                    <option value="frontend-developer">Frontend Developer</option>
+                    <option value="backend-developer">Backend Developer</option>
+                </select>
+
+                <h3>Personal Information</h3>
+                <label for="name">Name <span style="color: red;">*</span>:</label>
+                <input type="text" id="name" placeholder="Enter Your Name">
+                <label for="headline">Headline:</label>
+                <input type="text" id="headline" placeholder="Add a Catchy Headline">
+                <label for="img">Image Link:</label>
+                <input type="text" id="img-link" placeholder="Add Professional Photo URL">
+
+                <h3>Experience</h3>
+                <textarea id="experience" placeholder="Mention Your Experience, If Any"></textarea>
+
+                <h3>Skills <span style="color: red;">*</span>:</h3>
+                <textarea id="skills" placeholder="Add Your Relevant Skills"></textarea>
+
+                <h3>About</h3>
+                <textarea id="about" placeholder="Write About Yourself"></textarea>
+
+                <h3>Education Details</h3>
+                <label for="school">School:</label>
+                <input type="text" id="school" placeholder="Enter School Name">
+                <label for="jr-college">Jr. College:</label>
+                <input type="text" id="jr-college" placeholder="Enter Jr. College Name">
+                <label for="degree-college">Degree College:</label>
+                <input type="text" id="degree-college" placeholder="Enter Degree College Name">
+
+                <h3>Contact Details</h3>
+                <label for="email">Email <span style="color: red;">*</span>:</label>
+                <input type="email" id="email" placeholder="Enter Your Email">
+                <label for="phone">Phone Number:</label>
+                <input type="number" id="phone" placeholder="Enter Your Phone Number">
+
+                <button type="button" id="download-btn">Download PDF</button>
+                <div id="ats-status"></div>
+            </form>
+        </div>
+
+        <div class="right-panel">
+            <h2>Resume Preview</h2>
+            <div id="resume-preview">
+                <img id="preview-img" src="" alt="Profile Picture" style="max-width: 150px; border : 2px solid black; border-radius: 15px; display: none;">
+                <p><strong>Name:</strong> <span id="preview-name">Your Name</span></p>
+                <p><strong>Headline:</strong> <span id="preview-headline">Your Headline</span></p>
+                <p><strong>Experience:</strong></p>
+                <p id="preview-experience">Your experience will appear here...</p>
+                <p><strong>Skills:</strong> <span id="preview-skills">Your skills will appear here...</span></p>
+                <p><strong>About:</strong> <span id="preview-about">About section will appear here...</span></p>
+                <p><strong>Education:</strong></p>
+                <ul>
+                    <li id="preview-school">School Name</li>
+                    <li id="preview-jr-college">Jr. College Name</li>
+                    <li id="preview-degree-college">Degree College Name</li>
+                </ul>
+                <p><strong>Email:</strong> <span id="preview-email">Your Email</span></p>
+                <p><strong>Phone:</strong> <span id="preview-phone">Your Phone Number</span></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
